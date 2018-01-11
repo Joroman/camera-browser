@@ -15,4 +15,12 @@
       <img [src]="base64Image" *ngIf="base64Image" />
     </ion-card-content>
   </ion-card>
+  <ion-card>
+    <ion-card-content>
+      Hello World, this is my camera app
+
+      <button (click)="choosePicture()">Take a Picture</button> Latest Picture:
+      <img [src]="chose64Image" *ngIf="chose64Image" />
+    </ion-card-content>
+  </ion-card>
 </ion-content>
