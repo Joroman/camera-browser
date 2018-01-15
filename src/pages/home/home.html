@@ -11,7 +11,7 @@
     <ion-card-content>
       Hello World, this is my camera app
 
-      <button (click)="takePicture()">Take a Picture</button> Latest Picture:
+      <button ion-button (click)="takePicture()">Take a Picture</button> Latest Picture:
       <img [src]="base64Image" *ngIf="base64Image" />
     </ion-card-content>
   </ion-card>
@@ -19,8 +19,22 @@
     <ion-card-content>
       Hello World, this is my camera app
 
-      <button (click)="choosePicture()">Take a Picture</button> Latest Picture:
+      <button ion-button (click)="choosePicture()">Take a Picture</button> Latest Picture:
       <img [src]="chose64Image" *ngIf="chose64Image" />
     </ion-card-content>
   </ion-card>
+  <ion-card>
+    <ion-card-content>
+      <div id="hide" class="col-lg-8 col-xs-8">
+        <label class="hand-cursor">
+         <input type="file" nv-file-select (change)="readUrl($event)"/>
+         <span class="fa fa-camera"></span>
+         <span class="photo_text hidden-xs" ion-button>Take Photo</span>
+          </label>
+      </div>
+      <img *ngIf="url" [src]="url">
+    </ion-card-content>
+  </ion-card>
+
+
 </ion-content>
